@@ -11,9 +11,20 @@ const loadCategories = () => {
 
 };
 
+// Create DisplyCategories
+const displayCategories = (categories) => {
+     const catgoryContainer = document.getElementById('categories')
 
-const displayCategories = (data) => {
-    console.log(data);
+    categories.forEach((item) => {
+        console.log(item);
+        // create a button
+        const button = document.createElement('button');
+        button.classList = 'btn';
+        button.innerText = item.category;
+
+        // add button to catagory container
+        catgoryContainer.appendChild(button);
+    })
 };
 
 loadCategories();
