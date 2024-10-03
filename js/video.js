@@ -35,7 +35,6 @@ const cardDemo ={
             "posted_date": "15147"
         },
         "description": "'Inside Amy Schumer' is a comedy show by the popular comedian Amy Schumer, blending sharp satire and unfiltered humor to tackle everyday issues and societal norms. With 3.6K views, the show promises a blend of hilarious sketches, thought-provoking stand-up, and candid interviews. It's a must-watch for fans of bold, edgy comedy."
-    
 }
 
 const displayVideos = (videos) => {
@@ -46,16 +45,25 @@ const displayVideos = (videos) => {
     card.classList = 'card card-compact';
     card.innerHTML = 
     `
-    <figure>
+    <figure class="h-[200px]">
     <img
       src= ${video.thumbnail}
+      class="h-full w-full object-cover"
       alt="Shoes" />
   </figure>
-  <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+  <div class="px-0 py-2 flex gap-2">
+    <div>
+    <img class="w-10 h-10 rounded-full object-cover" src = ${video.authors[0].profile_picture}/>
+    </div>
+    <div>
+        <div>
+          <h2 class="font-bold">${video.title}</h2>
+        </div>
+        <div class="flex items-center gap-2">
+        <p class="text-gray-400">${video.authors[0].profile_name}</p>
+        <img class="w-5" src ="https://img.icons8.com/?size=96&id=D9RtvkuOe31p&format=png"/>
+        </div>
+        <p></p>
     </div>
   </div>
     `;
